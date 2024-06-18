@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/f30fac2c61.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto+Condensed:wght@700&family=Roboto+Slab&family=Roboto:wght@300&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <input type="checkbox" id="nav-check">
+            <div class="nav-header">
+                <div class="nav-title">
+                    <a href="./index.html"><img src="/image/logo.jpeg" alt="Logo"></a>
+                </div>
+            </div>
+            <div class="nav-btn">
+                <label for="nav-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+            <div class="search-container">
+                <form id="search-form" action="search_results.html" method="get">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            <div class="nav-links">
+                <a href="./venues.html">Venues</a>
+                <a href="./shop.html">Shop</a>
+                <a href="">Coaching</a>
+                <a href=""><button>REGISTER YOUR VENUE</button></a>
+            </div>
+        </div>
+        <div class="cart-icon" id="cart-icon">
+            🛒<span id="cart-count">0</span>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <h2>Cart</h2>
+            <ul id="cart-list">
+                <!-- Items will be added here -->
+            </ul>
+            <div class="cart-total">
+                <h3>Total: Rs. <span id="cart-total">0</span></h3>
+            </div>
+            <div class="cart-address">
+                <label for="address">Address:</label>
+                <input type="text" id="address" placeholder="Enter your address">
+            </div>
+            <div class="cart-note">
+                <label for="note">Note:</label>
+                <textarea id="note" placeholder="Enter a note"></textarea>
+            </div>
+            <div class="cart-buttons">
+            <button id="checkout-button">Checkout</button>
+            <button id="proceed-to-buy-button">Proceed to Buy</button>
+            </div>
+        </div>
+        <div class="account">
+            <a href="/account" class="account-link">Account</a>
+        </div>
+    </header>
+    <main>
+        <div class="Box">
+            <i class="fa fa-mail-reply" aria-hidden="true"></i>
+            <!-- <button id="back">< BACK</button> -->
+            <button id="back">&#8592;</button>
+        </div>
+        
+        <div class="card product" data-id="1" data-name="DSC Krunch 2.0 English Willow Bat" data-price="20964.00">
+            <div class="img">
+                <img src="/image/krunch-5-0-english-willow-cricket-bat-1_1fea8fe4-da2a-4e87-89b0-e8e02d080c69_713x-removebg-preview.png" alt="" onclick="clk(this)"> <br>
+                <img src="/image/krunch-5-0-english-willow-cricket-bat_584adcf9-073e-4635-9a1a-791f459e4f65-removebg-preview.png" alt="" onclick="clk(this)"> <br>
+                <img src="/image/krunch-5-0-english-willow-cricket-bat-2_8a39d38a-1d85-41ad-baa2-e4a42c8e547f_713x-removebg-preview.png" alt="" onclick="clk(this)"> <br>
+                <img src="/image/krunch-5-0-english-willow-cricket-bat-3_7ef7ca98-bad6-485b-be74-81ae1702c1d5_713x-removebg-preview.png" alt="" onclick="clk(this)"> <br>
+                <img src="/image/krunch-english-willow-4_1_01454860-7fe9-440e-b9f8-ad9bfde35715_713x-removebg-preview.png" alt="" onclick="clk(this)"> <br>
+                <img src="/image/krunch-5-0-english-willow-cricket-bat-4_a843b95c-4a35-4921-84c5-f39a0f3e6585_713x-removebg-preview.png" alt="" onclick="clk(this)"> <br>
+            </div>
+            <div class="left">
+                <img src="/image/krunch-5-0-english-willow-cricket-bat-1_1fea8fe4-da2a-4e87-89b0-e8e02d080c69_713x-removebg-preview.png" id="imgs" alt="">
+            </div>
+            <div class="right">
+                <h3>TOTAL SPORTS</h3>
+                <h1>DSC Krunch 2.0 English Willow Bat</h1>
+                <h2><del>Rs.29,964.00</del> Rs. 20,964.00</h2>
+                <div class="container">
+                    <div class="right">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <div class="some-other-element">
+                        <!-- Your other elements here -->
+                    </div>
+                </div>
+                <h3>Brand : DSC</h3>
+                <h4>Available Offer's</h4>
+                <p>: Special PriceGet extra 11% off (price inclusive of cashback/coupon: XOON101)</p>
+                <p>: Partner OfferPurchase now & get a surprise cashback coupon for January / February 2023</p>
+                <p>: Partner OfferSign up for Flipkart Pay Later and get Xoon Gift Card worth up to ₹1000*</p>
+                
+                <div class="quantity">
+                    <button id="decrease-quantity">-</button>
+                    <input type="number" id="product-quantity" value="1" min="1">
+                    <button id="increase-quantity">+</button>
+                </div>
+                <div class="button-container">
+                    <button id="add-to-cart">Add to Cart</button>
+                    <button id="buy-now">Buy Now</button>
+                </div>
+                
+            </div>
+        </div>
+        <div class="container-2">  
+            <h1>About this item</h1>
+            <p>Ideal for Intermediate and Professional players</p>
+            <p>Generic Name: Cricket Bat</p>
+            <p>Item Weight: 1kg 200g</p>
+            <p>Color: Orange</p>
+            <p>Price: Rs.20,964.00</p>
+        </div>
+    </main>
+    <div class="feature">
+        <h1><b>You may also like</b></h1>
+        <h2>Customers also viewed these products</h2>
+        <div class="gallery">
+            <div class="content">
+                <a href="/Dsc/Dsc1.0/index.html">
+                <img src="/image/krunch-5-0-english-willow-cricket-bat-1_1fea8fe4-da2a-4e87-89b0-e8e02d080c69_713x-removebg-preview.png" alt="Product Image">
+                <p>DSC Krunch 1.0 English Willow Bat</p>
+                <h6>Rs. 27,917.00</h6>
+                </a>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul>
+                <button class="buy-1">Buy Now</button>
+            </div>
+            <div class="content">
+                <a href="product4.html">
+                <img src="/image/krunch-5-0-english-willow-cricket-bat-1_1fea8fe4-da2a-4e87-89b0-e8e02d080c69_713x-removebg-preview.png" alt="Product Image">
+                <p>DSC Krunch 5.0 English Willow Bat</p>
+                <h6>Rs. 12,319.00</h6>
+                </a>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul>
+                <button class="buy-2">Buy Now</button>
+            </div>
+            <div class="content">
+                <a href="product4.html">
+                <img src="/image/krunch-5-0-english-willow-cricket-bat-1_1fea8fe4-da2a-4e87-89b0-e8e02d080c69_713x-removebg-preview.png" alt="Product Image">
+                <p>DSC Krunch 3.0 English Willow Bat</p>
+                <h6>Rs. 13,782.00</h6>
+                </a>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul>
+                <button class="buy-3">Buy Now</button>
+            </div>
+            <div class="content">
+                <a href="product4.html">
+                <img src="/image/krunch-5-0-english-willow-cricket-bat-1_1fea8fe4-da2a-4e87-89b0-e8e02d080c69_713x-removebg-preview.png" alt="Product Image">
+                <p>DSC Krunch 7.0 English Willow Bat</p>
+                <h6>Rs. 10,464.00</h6>
+                </a>
+                <ul>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star checked"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul>
+                <button class="buy-4">Buy Now</button>
+            </div>
+        </div>
+    </div>
+     <footer class="main_last">
+        <div class="container_last">
+            <div class="image_last">
+                <div class="first">
+                    <img src="/image/logo.jpeg" alt="Logo">
+                </div>
+                <div class="second_last">
+                    <div class="second">
+                        <img src="/image/playstore.png" alt="Play Store">
+                    </div>
+                    <div class="third">
+                        <img src="/image/appstore.png" alt="App Store">
+                    </div>
+                </div>
+                <div class="heading_last">
+                    <h3>Design for sport & made Made in Chennai</h3>
+                </div>
+            </div>
+            <div class="footer_one">
+                <div class="company_one">
+                    <li class="color_white">Company</li>
+                    <li>Contact Us</li>
+                    <li>Blog</li>
+                    <li>Terms of Service</li>
+                    <li>Privacy Policy</li>
+                </div>
+                <div class="social_one">
+                    <li class="color_white">Social</li>
+                    <li>Instagram</li>
+                    <li>Twitter</li>
+                    <li>LinkedIn</li>
+                    <li>Facebook</li>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
