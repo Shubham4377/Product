@@ -1,3 +1,4 @@
+
 *{
     margin: 0%;
     padding: 0;
@@ -13,11 +14,13 @@
 .left img{
     width: 366px;
     margin-inline:32px ;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 400px));
 }
 .card .img img{
     width: 74px;
     margin-left: 22px;
     cursor: pointer;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 400px));
 }
  
 .card .right {
@@ -49,6 +52,7 @@
     display: flex;
     justify-content: flex-start; /* Align items to the start */
     align-items: center; /* Vertically center items */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 400px));
 }
 
 .right i{
@@ -87,6 +91,63 @@
     text-align: center;
 }
 
+
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items horizontally */
+    }
+    
+    .left img {
+        width: 100%; /* Make images responsive */
+        margin-inline: 0;
+    }
+    
+    .card .img img {
+        width: 50px;
+        margin-left: 0;
+    }
+    
+    .card .right {
+        width: 100%; /* Make the right section full width */
+        text-align: center; /* Center text */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .left img {
+        width: 100%; /* Make images responsive */
+        margin-inline: 0;
+    }
+
+    .card .img img {
+        width: 50px;
+        margin-left: 0;
+    }
+
+    .card .right {
+        width: 100%; /* Make the right section full width */
+        text-align: center; /* Center text */
+    }
+
+    .quantity {
+        flex-direction: column; /* Stack buttons and input vertically */
+        align-items: center;
+    }
+
+    .quantity button {
+        margin: 5px 0;
+    }
+}
+
 /* button#add-to-cart, button#buy-now {
     padding: 10px 20px;
     font-size: 16px;
@@ -101,6 +162,7 @@
 } */
 
 /* <--------------------------------------------------------------- nav bar -----------------------------------------------------> */
+
 .nav {
     height: 50px;
     width: 100%;
@@ -208,6 +270,211 @@ display: inline;
     /* text-decoration: none; */
 
 }
+
+/* Media query for screens smaller than 1156px */
+@media (max-width: 1156px) {
+    .nav {
+        height: 40px;
+    }
+    .nav-title img {
+        width: 80px;
+        height: 30px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 18px;
+        padding: 8px;
+    }
+    .nav > .nav-links {
+        font-size: 16px;
+    }
+    .nav > .nav-links > a {
+        padding: 10px 8px;
+    }
+    .nav > .nav-links button {
+        padding: 15px;
+    }
+    .search-container input[type="text"] {
+        padding: 8px;
+        font-size: 14px;
+        width: 120px;
+    }
+    .search-container button {
+        padding: 8px 15px;
+        font-size: 14px;
+        width: 120px;
+    }
+}
+
+/* Media query for screens smaller than 1017px */
+@media (max-width: 1017px) {
+    .nav {
+        height: 35px;
+    }
+    .nav-title img {
+        width: 70px;
+        height: 25px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 16px;
+        padding: 6px;
+    }
+    .nav > .nav-links {
+        font-size: 14px;
+    }
+    .nav > .nav-links > a {
+        padding: 8px 6px;
+    }
+    .nav > .nav-links button {
+        padding: 12px;
+    }
+    .search-container input[type="text"] {
+        padding: 6px;
+        font-size: 12px;
+        width: 100px;
+    }
+    .search-container button {
+        padding: 6px 12px;
+        font-size: 12px;
+        width: 100px;
+    }
+}
+
+/* Media query for screens smaller than 992px */
+@media (max-width: 992px) {
+    .nav {
+        height: 30px;
+    }
+    .nav-title img {
+        width: 60px;
+        height: 20px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 14px;
+        padding: 4px;
+    }
+    .nav > .nav-links {
+        font-size: 12px;
+    }
+    .nav > .nav-links > a {
+        padding: 6px 4px;
+    }
+    .nav > .nav-links button {
+        padding: 10px;
+    }
+    .search-container input[type="text"] {
+        padding: 4px;
+        font-size: 10px;
+        width: 80px;
+    }
+    .search-container button {
+        padding: 4px 10px;
+        font-size: 10px;
+        width: 80px;
+    }
+}
+
+/* Media query for screens smaller than 913px */
+@media (max-width: 913px) {
+    .nav {
+        height: 25px;
+    }
+    .nav-title img {
+        width: 55px;
+        height: 18px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 13px;
+        padding: 3px;
+    }
+    .nav > .nav-links {
+        font-size: 11px;
+    }
+    .nav > .nav-links > a {
+        padding: 5px 3px;
+    }
+    .nav > .nav-links button {
+        padding: 9px;
+    }
+    .search-container input[type="text"] {
+        padding: 3px;
+        font-size: 9px;
+        width: 70px;
+    }
+    .search-container button {
+        padding: 3px 9px;
+        font-size: 9px;
+        width: 70px;
+    }
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    .nav {
+        height: 20px;
+    }
+    .nav-title img {
+        width: 50px;
+        height: 15px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 12px;
+        padding: 2px;
+    }
+    .nav > .nav-links {
+        font-size: 10px;
+    }
+    .nav > .nav-links > a {
+        padding: 4px 2px;
+    }
+    .nav > .nav-links button {
+        padding: 8px;
+    }
+    .search-container input[type="text"] {
+        padding: 2px;
+        font-size: 8px;
+        width: 60px;
+    }
+    .search-container button {
+        padding: 2px 8px;
+        font-size: 8px;
+        width: 60px;
+    }
+}
+
+/* Media query for screens smaller than 576px */
+@media (max-width: 576px) {
+    .nav {
+        height: 15px;
+    }
+    .nav-title img {
+        width: 45px;
+        height: 10px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 10px;
+        padding: 1px;
+    }
+    .nav > .nav-links {
+        font-size: 8px;
+    }
+    .nav > .nav-links > a {
+        padding: 3px 1px;
+    }
+    .nav > .nav-links button {
+        padding: 6px;
+    }
+    .search-container input[type="text"] {
+        padding: 1px;
+        font-size: 6px;
+        width: 50px;
+    }
+    .search-container button {
+        padding: 1px 6px;
+        font-size: 6px;
+        width: 50px;
+    }
+}
+
 /* <--------------------------------------------------------------- nav bar end -----------------------------------------------------> */
 
 
