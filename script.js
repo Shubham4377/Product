@@ -170,7 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // <----------------------------------------------- Buy now button alert end--------------------------------------->
 
-
 // <----------------------------------------------- Back code start--------------------------------------->
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("back").addEventListener("click", function() {
@@ -178,3 +177,4 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 // <----------------------------------------------- Back code end --------------------------------------->
+

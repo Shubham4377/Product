@@ -1,8 +1,13 @@
+
 *{
     margin: 0%;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: black
+    /* background-color: black; */
+}
+body{
+    color: black;
+    background-color: black;
 }
 .card{
     display: flex;
@@ -13,11 +18,13 @@
 .left img{
     width: 366px;
     margin-inline:32px ;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 400px));
 }
 .card .img img{
     width: 74px;
     margin-left: 22px;
     cursor: pointer;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 400px));
 }
  
 .card .right {
@@ -49,6 +56,7 @@
     display: flex;
     justify-content: flex-start; /* Align items to the start */
     align-items: center; /* Vertically center items */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 400px));
 }
 
 .right i{
@@ -87,6 +95,63 @@
     text-align: center;
 }
 
+
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items horizontally */
+    }
+    
+    .left img {
+        width: 100%; /* Make images responsive */
+        margin-inline: 0;
+    }
+    
+    .card .img img {
+        width: 50px;
+        margin-left: 0;
+    }
+    
+    .card .right {
+        width: 100%; /* Make the right section full width */
+        text-align: center; /* Center text */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .left img {
+        width: 100%; /* Make images responsive */
+        margin-inline: 0;
+    }
+
+    .card .img img {
+        width: 50px;
+        margin-left: 0;
+    }
+
+    .card .right {
+        width: 100%; /* Make the right section full width */
+        text-align: center; /* Center text */
+    }
+
+    .quantity {
+        flex-direction: column; /* Stack buttons and input vertically */
+        align-items: center;
+    }
+
+    .quantity button {
+        margin: 5px 0;
+    }
+}
+
 /* button#add-to-cart, button#buy-now {
     padding: 10px 20px;
     font-size: 16px;
@@ -101,6 +166,7 @@
 } */
 
 /* <--------------------------------------------------------------- nav bar -----------------------------------------------------> */
+
 .nav {
     height: 50px;
     width: 100%;
@@ -169,7 +235,7 @@ display: inline;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
+    background-color: transparent;
 }
 .search-container input[type="text"] {
     
@@ -208,6 +274,211 @@ display: inline;
     /* text-decoration: none; */
 
 }
+
+/* Media query for screens smaller than 1156px */
+@media (max-width: 1156px) {
+    .nav {
+        height: 40px;
+    }
+    .nav-title img {
+        width: 80px;
+        height: 30px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 18px;
+        padding: 8px;
+    }
+    .nav > .nav-links {
+        font-size: 16px;
+    }
+    .nav > .nav-links > a {
+        padding: 10px 8px;
+    }
+    .nav > .nav-links button {
+        padding: 15px;
+    }
+    .search-container input[type="text"] {
+        padding: 8px;
+        font-size: 14px;
+        width: 120px;
+    }
+    .search-container button {
+        padding: 8px 15px;
+        font-size: 14px;
+        width: 120px;
+    }
+}
+
+/* Media query for screens smaller than 1017px */
+@media (max-width: 1017px) {
+    .nav {
+        height: 35px;
+    }
+    .nav-title img {
+        width: 70px;
+        height: 25px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 16px;
+        padding: 6px;
+    }
+    .nav > .nav-links {
+        font-size: 14px;
+    }
+    .nav > .nav-links > a {
+        padding: 8px 6px;
+    }
+    .nav > .nav-links button {
+        padding: 12px;
+    }
+    .search-container input[type="text"] {
+        padding: 6px;
+        font-size: 12px;
+        width: 100px;
+    }
+    .search-container button {
+        padding: 6px 12px;
+        font-size: 12px;
+        width: 100px;
+    }
+}
+
+/* Media query for screens smaller than 992px */
+@media (max-width: 992px) {
+    .nav {
+        height: 30px;
+    }
+    .nav-title img {
+        width: 60px;
+        height: 20px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 14px;
+        padding: 4px;
+    }
+    .nav > .nav-links {
+        font-size: 12px;
+    }
+    .nav > .nav-links > a {
+        padding: 6px 4px;
+    }
+    .nav > .nav-links button {
+        padding: 10px;
+    }
+    .search-container input[type="text"] {
+        padding: 4px;
+        font-size: 10px;
+        width: 80px;
+    }
+    .search-container button {
+        padding: 4px 10px;
+        font-size: 10px;
+        width: 80px;
+    }
+}
+
+/* Media query for screens smaller than 913px */
+@media (max-width: 913px) {
+    .nav {
+        height: 25px;
+    }
+    .nav-title img {
+        width: 55px;
+        height: 18px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 13px;
+        padding: 3px;
+    }
+    .nav > .nav-links {
+        font-size: 11px;
+    }
+    .nav > .nav-links > a {
+        padding: 5px 3px;
+    }
+    .nav > .nav-links button {
+        padding: 9px;
+    }
+    .search-container input[type="text"] {
+        padding: 3px;
+        font-size: 9px;
+        width: 70px;
+    }
+    .search-container button {
+        padding: 3px 9px;
+        font-size: 9px;
+        width: 70px;
+    }
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    .nav {
+        height: 20px;
+    }
+    .nav-title img {
+        width: 50px;
+        height: 15px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 12px;
+        padding: 2px;
+    }
+    .nav > .nav-links {
+        font-size: 10px;
+    }
+    .nav > .nav-links > a {
+        padding: 4px 2px;
+    }
+    .nav > .nav-links button {
+        padding: 8px;
+    }
+    .search-container input[type="text"] {
+        padding: 2px;
+        font-size: 8px;
+        width: 60px;
+    }
+    .search-container button {
+        padding: 2px 8px;
+        font-size: 8px;
+        width: 60px;
+    }
+}
+
+/* Media query for screens smaller than 576px */
+@media (max-width: 576px) {
+    .nav {
+        height: 15px;
+    }
+    .nav-title img {
+        width: 45px;
+        height: 10px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 10px;
+        padding: 1px;
+    }
+    .nav > .nav-links {
+        font-size: 8px;
+    }
+    .nav > .nav-links > a {
+        padding: 3px 1px;
+    }
+    .nav > .nav-links button {
+        padding: 6px;
+    }
+    .search-container input[type="text"] {
+        padding: 1px;
+        font-size: 6px;
+        width: 50px;
+    }
+    .search-container button {
+        padding: 1px 6px;
+        font-size: 6px;
+        width: 50px;
+    }
+}
+
 /* <--------------------------------------------------------------- nav bar end -----------------------------------------------------> */
 
 
@@ -390,22 +661,43 @@ button#add-to-cart, button#buy-now {
 }
 
 #back {
-    /* background-color: #5254f8; */
-    color: white; /* Optional: to ensure the text is readable */
+    background-color: #5254f8;
+    color: white; 
     border-radius: 50px;
     padding: 10px;
 }
 
 
+/* styles.css */
 
-/* <--------------------------------------------------------------- nav bar end -----------------------------------------------------> */
+/* Remove the white background inside the cart */
+.cart-items {
+    background-color: transparent; /* Or use any color you prefer */
+}
+.cart-items h2,
+.cart-items h3,
+.cart-items label,
+.cart-items input,
+.cart-items textarea,
+.cart-items button {
+    background-color: transparent; /* Ensures all elements within the cart have a transparent background */
+}
+/* Optional: Adding some styles to make the cart look nicer */
+.cart-items {
+    border: 1px solid #ccc; /* Optional: Add a border to the cart */
+    padding: 160px; /* Optional: Add some padding */
+    margin: 20px;
+}
+
+/* <---------------------------------------------------------------  end -----------------------------------------------------> */
 
 
 /* Add these styles to your styles.css file */
 
 #checkout-button, #proceed-to-buy-button {
     background-color: #5254f8; /* Green background */
-    color: white; /* White text */
+    color: white; 
+    
     border: none; /* Remove borders */
     padding: 10px 15px; /* Add padding */
     text-align: center; /* Center text */
@@ -425,7 +717,7 @@ button#add-to-cart, button#buy-now {
     display: flex; /* Use flexbox to align buttons */
     justify-content: space-between; /* Space between the buttons */
     margin-top: 20px; /* Add some margin at the top */
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 /* <--------------------------------------------------------------- container 2  -----------------------------------------------------> */
 
@@ -450,8 +742,33 @@ button#add-to-cart, button#buy-now {
 }
 
 /* <--------------------------------------------------------------- container end -----------------------------------------------------> */
+.feature .content img {
+    display: block; /* Ensure images are displayed as block elements */
+    margin: 0 auto; /* Center the images */
+    padding: 0; /* Remove padding */
+}
 
- 
+
+
+.feature .content {
+    background-color: white; /* Ensure individual product cards are also white */
+    border: 1px solid #ddd; /* Add a border to individual product cards */
+    border-radius: 10px; /* Optional: Add rounded corners to product cards */
+    padding: 15px; /* Add padding inside product cards */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow to product cards */
+}
+ /* Example CSS to ensure no background color is applied to feature images */
+.feature .gallery .content img {
+    background-color: transparent; /* Remove any background color */
+    /* Add any additional styling needed */
+}
+/* Example CSS to ensure no background color is applied to specific elements within the .feature section */
+.feature .content p,
+.feature .content h6,
+.feature .content ul {
+    background-color: transparent; /* Remove any background color */
+}
+
 .feature h1{
     margin-top: 11px;
     text-align: center;
@@ -482,15 +799,15 @@ a{
     border-radius: 20px;
     cursor: pointer;
     padding-top: 10px;
-    box-shadow: 0 14px 28px rgba(26, 26, 26, 0.73),
-    0 10px 10px rgba(56, 56, 56, 0.664);
+    box-shadow: 0 14px 28px rgba(237, 131, 131, 0.807),
+    0 10px 10px rgba(207, 107, 107, 0.664);
     transition: .4s;
     background: rgba(196, 192, 192, 0.755);
-    background-color:rgba(0, 0, 0, 0.652)
+    background-color:rgba(172, 6, 6, 0.689)
 }
 .content:hover{
-    box-shadow: 0 3px 6px rgba(246, 239, 239, 0.16),
-    0 3px 6px rgba(251, 248, 248, 0.033);
+    box-shadow: 0 3px 6px rgba(4, 25, 209, 0.775),
+    0 3px 6px rgba(5, 57, 212, 0.812);
     transform: translate(0px -8px);
 }
 
@@ -502,13 +819,14 @@ img{
 h6{
     font-size: 26px;
     text-align: center;
-    color: #fff;
+    color: black;
     margin: 0;
 }
 p{
     font-size: 16px;
     line-height: 1.6;
-    color: #fff;
+    color: black;
+
     margin-bottom: 20px;
 
 }
@@ -524,12 +842,13 @@ ul{
     justify-content: center;
     align-items: center;
     padding: 0;
-   
+   color: #fff;
 }
 li{
     padding-top: 5px;
     /* color: #ffffff; */
     color: orange;
+    /* background-color: transparent; */
 }
 .checked{
     color: orange;
