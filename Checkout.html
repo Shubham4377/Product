@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="Checkout.css">
+</head>
+<body>
+  <div class="nav">
+    <img src="image/logo.jpeg" alt="Xoon Shop Logo">
+    <div class="cart-icon" id="cart-icon">🛒</div>
+  </div>
+  <div class="container">
+    <div class="left">
+      <h2>Contact</h2>
+      <input type="email" id="email" placeholder="Enter an email" required>
+      <label for="news">
+        <input type="checkbox" id="news">
+        Email me with news and offers
+      </label>
+      <h2>Delivery</h2>
+      <select id="country">
+        <option value="India">India</option>
+      </select>
+      <input type="text" id="firstName" placeholder="First name (optional)">
+      <input type="text" id="lastName" placeholder="Last name (optional)">
+      <input type="text" id="address" placeholder="Address" required>
+      <textarea id="apartment" placeholder="Apartment, suite, etc. (optional)"></textarea>
+      <input type="text" id="city" placeholder="City" required>
+      <select id="state">
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+        <option value="Assam">Assam</option>
+        <option value="Bihar">Bihar</option>
+        <option value="Chhattisgarh">Chhattisgarh</option>
+        <option value="Goa">Goa</option>
+        <option value="Gujarat">Gujarat</option>
+        <option value="Haryana">Haryana</option>
+        <option value="Himachal Pradesh">Himachal Pradesh</option>
+        <option value="Jharkhand">Jharkhand</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Madhya Pradesh">Madhya Pradesh</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Manipur">Manipur</option>
+        <option value="Meghalaya">Meghalaya</option>
+        <option value="Mizoram">Mizoram</option>
+        <option value="Nagaland">Nagaland</option>
+        <option value="Odisha">Odisha</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Sikkim">Sikkim</option>
+        <option value="Tamil Nadu">Tamil Nadu</option>
+        <option value="Telangana">Telangana</option>
+        <option value="Tripura">Tripura</option>
+        <option value="Uttar Pradesh">Uttar Pradesh</option>
+        <option value="Uttarakhand">Uttarakhand</option>
+        <option value="West Bengal">West Bengal</option>
+      </select>
+      <input type="text" id="pin" placeholder="PIN code" required>
+      <input type="text" id="phone" placeholder="Phone" required>
+      <div class="section">
+        <input type="checkbox"> Save this information for next time
+      </div>
+      <div class="section">
+        <h2>Shipping method</h2>
+        <input type="text" placeholder="Enter your shipping address to view available shipping methods." disabled>
+      </div>
+    
+      <div class="section payment-method-box">
+        <h2>Payment</h2>
+        <p>All transactions are secure and encrypted.</p>
+        <div class="payment-methods">
+          <span>Razorpay Secure (UPI, Cards, Wallets, NetBanking)</span>
+        </div>
+        <div class="payment-images-box">
+          <img src="image/upi_logo_icon_169316 (1).png" alt="UPI">
+          <img src="image/Visa_icon-icons.com_60549.png" alt="Visa">
+          <img src="image/mastercard_82049.png" alt="Mastercard">
+          <img src="image/pngwing.com (10).png" alt="RuPay">
+        </div>
+        <div class="payment-method-details">
+          <p>After clicking "Pay now", you will be redirected to Razorpay Secure (UPI, Cards, Wallets, NetBanking) to complete your purchase securely.</p>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Billing address</h2>    
+        <div class="checkbox">
+          <input type="radio" name="billing-address" id="same-as-shipping" checked>
+          <label for="same-as-shipping">Same as shipping address</label>
+        </div>
+        <div class="checkbox">
+          <input type="radio" name="billing-address" id="different-billing-address">
+          <label for="different-billing-address">Use a different billing address</label>
+        </div>
+        <input type="text" id="billing-address" placeholder="Enter your billing address" disabled>    
+      </div>
+      <button class="button" id="pay-now">Pay now</button>
+      <div class="links">
+        <a href="#" class="link">Refund policy</a>
+        <a href="#" class="link">Privacy policy</a>
+        <a href="#" class="link">Terms of service</a>
+        <a href="#" class="link">Contact information</a>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="order-summary">
+        <h3>Order Summary</h3>
+        <div id="product-summary">
+          <!-- Example products, each product div should have a quantity element -->
+          <div class="product">
+            <span>Product 1</span>
+            <span class="quantity">2</span>
+          </div>
+          <div class="product">
+            <span>Product 2</span>
+            <span class="quantity">3</span>
+          </div>
+        </div>
+      </div>
+      <button id="complete-purchase">Complete Purchase</button>
+    </div>
+  </div>
+  
+  <script src="Checkout.js"></script>
+  <script>
+    document.getElementById("cart-icon").addEventListener("click", function() {
+      window.location.href = "cart.html"; // Replace with the actual URL of your cart page
+    });
+
+    document.getElementById("complete-purchase").addEventListener("click", function() {
+      const email = document.getElementById("email").value;
+      const address = document.getElementById("address").value;
+      const city = document.getElementById("city").value;
+      const pin = document.getElementById("pin").value;
+      const phone = document.getElementById("phone").value;
+      const products = []; // Add logic to collect product details
+
+      if (!email || !address || !city || !pin || !phone) {
+        alert("Please fill the form");
+      } else {
+        fetch('http://localhost:3000/checkout', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: email,
+            address: address,
+            city: city,
+            pin: pin,
+            phone: phone,
+            products: products
+          }),
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+          alert("Order placed successfully. Please click 'Pay now'");
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      }
+    });
+
+    document.getElementById("pay-now").addEventListener("click", function() {
+      // Proceed to payment gateway or any other action
+      alert("Redirecting to payment gateway...");
+    });
+  </script>
+
+   <!-- <--------------------------------------------------------------- Footer  ----------------------------------------------------->
+   <footer class="main_last">
+    <div class="container_last">
+        <div class="image_last">
+            <div class="first">
+                <img src="image/logo.jpeg" alt="Logo">
+            </div>
+            <div class="second_last">
+                <div class="second">
+                    <img src="image/playstore.png" alt="Play Store">
+                </div>
+                <div class="third">
+                    <img src="image/appstore.png" alt="App Store">
+                </div>
+            </div>
+            <div class="heading_last">
+                <h3>Design for sport & made Made in Chennai</h3>
+            </div>
+        </div>
+        <div class="footer_one">
+            <div class="company_one">
+                <li class="color_white">Company</li>
+                <li>Contact Us</li>
+                <li>Blog</li>
+                <li>Terms of Service</li>
+                <li>Privacy Policy</li>
+            </div>
+            <div class="social_one">
+                <li class="color_white">Social</li>
+                <li>Instagram</li>
+                <li>Twitter</li>
+                <li>LinkedIn</li>
+                <li>Facebook</li>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- <--------------------------------------------------------------- Footer end ----------------------------------------------------->
+</body>
+</html>

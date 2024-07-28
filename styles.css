@@ -73,7 +73,7 @@ body{
     margin-top: 11px;
     margin-bottom: 2px;
     margin-right: 15px;
-  
+    
     color: #fff;
 }
 
@@ -261,19 +261,35 @@ display: inline;
 #address,
 #note {
     color: white;
+    border-radius: 5px;
+    
 }
 
-.account-link{
+.account-link {
     padding: 15px;
-    /* background-color: #3498db; */
     color: #fff;
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
-    /* text-decoration: none; */
-
 }
+
+/* Ensure the parent container of .account-link uses flexbox */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+/* If needed, ensure the account container is a flex item and centered */
+.account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Make it take up available space */
+}
+
 
 /* Media query for screens smaller than 1156px */
 @media (max-width: 1156px) {
@@ -546,7 +562,7 @@ header {
 
 
 .cart-items ul li button {
-    background-color: red;
+    /* background-color: red; */
     color: white;
     border: none;
     padding: 5px;
@@ -578,6 +594,11 @@ header {
 #cart-icon {
     cursor: pointer;
 }
+.cart-item-image {
+    width: 100px; 
+    object-fit: cover;
+}
+
 .product {
     text-align: center;
     margin: 50px;
@@ -652,6 +673,7 @@ button#add-to-cart, button#buy-now {
     font-size: 16px;
     margin: 10px;
     cursor: pointer;
+    color: #fff;
     background-color: #5254f8;
 }
 /* Ensure the buttons are always visible */
@@ -672,7 +694,7 @@ button#add-to-cart, button#buy-now {
 
 /* Remove the white background inside the cart */
 .cart-items {
-    background-color: transparent; /* Or use any color you prefer */
+    background-color: rgb(25, 26, 28);; /* Or use any color you prefer */
 }
 .cart-items h2,
 .cart-items h3,
@@ -693,21 +715,21 @@ button#add-to-cart, button#buy-now {
 
 
 /* Add these styles to your styles.css file */
-
 #checkout-button, #proceed-to-buy-button {
-    background-color: #5254f8; /* Green background */
+    background-color: #5254f8; /* Background color */
     color: white; 
     
     border: none; /* Remove borders */
-    padding: 10px 15px; /* Add padding */
+    padding: 5px 10px; /* Adjust padding */
     text-align: center; /* Center text */
     text-decoration: none; /* Remove underline */
     display: inline-block; /* Inline block */
-    font-size: 16px; /* Increase font size */
+    font-size: 14px; /* Adjust font size */
     margin: 2px 2px; /* Add some margin */
     cursor: pointer; /* Pointer cursor on hover */
     border-radius: 5px; /* Rounded corners */
 }
+
 
 #checkout-button:hover, #proceed-to-buy-button:hover {
     background-color: #2872c8c1; /* Darker green on hover */
@@ -721,23 +743,30 @@ button#add-to-cart, button#buy-now {
 }
 /* <--------------------------------------------------------------- container 2  -----------------------------------------------------> */
 
-.container-2 {
-  
-    
+.container-2 { 
     margin: 0 auto; 
     width: 80%; 
     height: auto; 
-    /* background-color: #f0f0f0; 
-    color: #333;  */
-    padding: 20px;
     text-align: center; 
+    justify-content: space-around;
+    padding: 20px;
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
-.container-2 h1{
+
+.container-2 h1 {
     color: orange;
 }
-.container-2 p{
+
+.container-2 p {
+    display: flex;
+    
+    margin-top: 11px;
+    margin-bottom: 2px;
+    margin-right: 15px;
+    padding-top: 10px;
+    padding-left: 560px;
+
     color: #fff;
 }
 
@@ -863,6 +892,9 @@ button{
     font-size: 16px;
     margin: 10px;
     cursor: pointer;
+}
+.feature .content button {
+    color: white;
 }
 .buy-1{
     background: #5254f8; 
@@ -1021,4 +1053,129 @@ button{
         flex-direction: column;
     }
 
+}
+ /* ----------------------------------------------------toggle css code----------------------------------------- */
+
+body.dark-mode {
+    background-color: #fffbfbc1;
+    color: #ffffff;
+}
+body.dark-mode p {
+    color: black;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.toggle-switch {
+    display: flex;
+    align-items: center;
+}
+.toggle-switch input[type="checkbox"] {
+    display: none;
+}
+.toggle-switch label {
+    background-color: #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 50px;
+}
+.toggle-switch label::after {
+    background-color: #fff;
+    border-radius: 50%;
+    content: "";
+    height: 20px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    width: 20px;
+    transition: transform 0.3s ease;
+}
+.toggle-switch input[type="checkbox"]:checked + label::after {
+    transform: translateX(26px);
+}
+.toggle-switch input[type="checkbox"]:checked + label {
+    background-color: #4cd137;
+}
+.dark-mode .feature .content {
+    background-color: black;
+    color: white;
+}
+body.dark-mode .cart-items {
+background-color: white; /* Set the desired background color */
+color: black; /* Set the text color to ensure visibility */
+}
+
+body.dark-mode .cart-items input[type="text"],
+body.dark-mode .cart-items input[type="number"] {
+color: black; /* Input text color */
+}
+body.dark-mode .cart-items #address,
+body.dark-mode .cart-items #note {
+color: black;
+}
+body.dark-mode .cart-items .decrease-quantity,
+body.dark-mode .cart-items .increase-quantity,
+body.dark-mode .cart-items .remove-item {
+color: black; /* Quantity buttons and remove button color */
+}
+body.dark-mode .container .right i {
+background-color: transparent; /* Removes the background color */
+}
+
+
+
+
+/* -------------------------------------------search-button css code-------------------------- */
+
+.search-container {
+    position: relative;
+    margin-bottom: 1px;
+}
+
+.search-results {
+    position: absolute;
+    top: calc(100% + 10px); /* Position below the search bar with a small gap */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it's on top of other content */
+    display: none; /* Initially hidden */
+    border-top: 2px solid #4cd137; /* Optional: Add a top border for separation */
+}
+
+.search-results.visible {
+    display: block; /* Show when results are available */
+}
+
+.search-result {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.search-result img {
+    width: 50px; /* Adjust image size as needed */
+    height: 50px; /* Adjust image size as needed */
+    margin-right: 10px;
+}
+
+.search-result p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: black; /* Set text color to black */
+}
+
+.search-result h6 {
+    margin: 0;
+    color: #777;
+    font-size: 12px;
 }

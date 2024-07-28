@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="Cart.css">
+</head>
+<body>
+    <div class="cart-container">
+        <h1>Your cart</h1>
+        <a href="index.html" class="continue-shopping">Continue shopping</a>
+        <div class="cart-header">
+            <span class="cart-header-item">Product</span>
+            <span class="cart-header-item">Quantity</span>
+            <span class="cart-header-item">Total</span>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-summary">
+            <p>Subtotal <span class="subtotal">Rs. 0.00</span></p>
+            <p class="taxes-shipping">Taxes and shipping calculated at checkout</p>
+            <button class="checkout-btn">Check out</button>
+            <p class="error-message">There was an error while updating your cart. Please try again.</p>
+        </div>
+    </div>
+    <script src="Cart.js"></script>
+</body>
+</html>

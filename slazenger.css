@@ -261,6 +261,8 @@ display: inline;
 #address,
 #note {
     color: white;
+    border-radius: 5px;
+    
 }
 
 .account-link{
@@ -273,6 +275,12 @@ display: inline;
     align-items: center;
     /* text-decoration: none; */
 
+}
+.account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Make it take up available space */
 }
 
 /* Media query for screens smaller than 1156px */
@@ -546,7 +554,7 @@ header {
 
 
 .cart-items ul li button {
-    background-color: red;
+    /* background-color: red; */
     color: white;
     border: none;
     padding: 5px;
@@ -578,6 +586,11 @@ header {
 #cart-icon {
     cursor: pointer;
 }
+.cart-item-image {
+    width: 100px; 
+    object-fit: cover;
+}
+
 .product {
     text-align: center;
     margin: 50px;
@@ -672,7 +685,7 @@ button#add-to-cart, button#buy-now {
 
 /* Remove the white background inside the cart */
 .cart-items {
-    background-color: transparent; /* Or use any color you prefer */
+    background-color: rgb(25, 26, 28);; /* Or use any color you prefer */
 }
 .cart-items h2,
 .cart-items h3,
@@ -693,21 +706,21 @@ button#add-to-cart, button#buy-now {
 
 
 /* Add these styles to your styles.css file */
-
 #checkout-button, #proceed-to-buy-button {
-    background-color: #5254f8; /* Green background */
+    background-color: #5254f8; /* Background color */
     color: white; 
     
     border: none; /* Remove borders */
-    padding: 10px 15px; /* Add padding */
+    padding: 5px 10px; /* Adjust padding */
     text-align: center; /* Center text */
     text-decoration: none; /* Remove underline */
     display: inline-block; /* Inline block */
-    font-size: 16px; /* Increase font size */
+    font-size: 14px; /* Adjust font size */
     margin: 2px 2px; /* Add some margin */
     cursor: pointer; /* Pointer cursor on hover */
     border-radius: 5px; /* Rounded corners */
 }
+
 
 #checkout-button:hover, #proceed-to-buy-button:hover {
     background-color: #2872c8c1; /* Darker green on hover */
@@ -1022,3 +1035,8 @@ button{
     }
 
 }
+
+
+
+
+

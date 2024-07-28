@@ -9,6 +9,80 @@
     <script src="https://kit.fontawesome.com/f30fac2c61.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto+Condensed:wght@700&family=Roboto+Slab&family=Roboto:wght@300&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
     <script src="slazenger.js" defer></script>
+    <style>
+        
+        body.dark-mode {
+            background-color: #fffbfbc1;
+            color: #ffffff;
+        }
+        body.dark-mode p {
+            color: black;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .toggle-switch {
+            display: flex;
+            align-items: center;
+        }
+        .toggle-switch input[type="checkbox"] {
+            display: none;
+        }
+        .toggle-switch label {
+            background-color: #ccc;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-block;
+            height: 24px;
+            position: relative;
+            width: 50px;
+        }
+        .toggle-switch label::after {
+            background-color: #fff;
+            border-radius: 50%;
+            content: "";
+            height: 20px;
+            left: 2px;
+            position: absolute;
+            top: 2px;
+            width: 20px;
+            transition: transform 0.3s ease;
+        }
+        .toggle-switch input[type="checkbox"]:checked + label::after {
+            transform: translateX(26px);
+        }
+        .toggle-switch input[type="checkbox"]:checked + label {
+            background-color: #4cd137;
+        }
+        .dark-mode .feature .content {
+            background-color: black;
+            color: white;
+        }
+        body.dark-mode .cart-items {
+        background-color: white; /* Set the desired background color */
+        color: black; /* Set the text color to ensure visibility */
+        }
+        
+        body.dark-mode .cart-items input[type="text"],
+        body.dark-mode .cart-items input[type="number"] {
+        color: black; /* Input text color */
+        }
+        body.dark-mode .cart-items #address,
+        body.dark-mode .cart-items #note {
+        color: black;
+        }
+        body.dark-mode .cart-items .decrease-quantity,
+        body.dark-mode .cart-items .increase-quantity,
+        body.dark-mode .cart-items .remove-item {
+        color: black; /* Quantity buttons and remove button color */
+        }
+        body.dark-mode .container .right i {
+        background-color: transparent; /* Removes the background color */
+        }
+            </style>
 </head>
 <body>
     <header>
@@ -47,6 +121,7 @@
             <ul id="cart-list">
                 <!-- Items will be added here -->
             </ul>
+            
             <div class="cart-total">
                 <h3>Total: Rs. <span id="cart-total">0</span></h3>
             </div>
@@ -66,6 +141,10 @@
         <div class="account">
             <a href="/account" class="account-link">Account</a>
         </div>
+        <div class="toggle-switch">
+            <input type="checkbox" id="mode-toggle">
+            <label for="mode-toggle"></label>
+        </div>
     </header>
     <main>
         <div class="Box">
@@ -74,7 +153,7 @@
             <button id="back">&#8592;</button>
         </div>
         
-        <div class="card product" data-id="1" data-name="Slazenger Wimbledon Multicolour Tennis Ball" data-price="525.00">
+        <div class="card product" data-id="1" data-name="Slazenger Wimbledon Multicolour Tennis Ball" data-price="525.00" data-image="image/AnyConv.com__8615037-removebg-preview.png">
             <div class="img">
                 <img src="image/AnyConv.com__8615037-removebg-preview.png" alt="" onclick="clk(this)"> <br>
                 <img src="" alt="" onclick="clk(this)"> <br>
@@ -231,5 +310,46 @@
             </div>
         </div>
     </footer>
+    <script>
+
+     
+        document.addEventListener('DOMContentLoaded', function () {
+        const modeToggle = document.getElementById('mode-toggle');
+        const body = document.body;
+        const featureContents = document.querySelectorAll('.feature .content');
+    
+        modeToggle.addEventListener('change', function () {
+            body.classList.toggle('dark-mode');
+    
+            const paragraphs = document.querySelectorAll('.feature .content p');
+            const headings = document.querySelectorAll('.feature .content h6');
+    
+            paragraphs.forEach(function (paragraph) {
+                if (modeToggle.checked) {
+                    paragraph.style.color = 'white';
+                } else {
+                    paragraph.style.color = ''; // revert to default
+                }
+            });
+    
+            headings.forEach(function (heading) {
+                if (modeToggle.checked) {
+                    heading.style.color = 'white';
+                } else {
+                    heading.style.color = ''; // revert to default
+                }
+            });
+    
+            featureContents.forEach(function (content) {
+                if (modeToggle.checked) {
+                    content.classList.add('dark-mode');
+                } else {
+                    content.classList.remove('dark-mode');
+                }
+            });
+        });
+    });
+    
+        </script>
 </body>
 </html>
