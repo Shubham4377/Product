@@ -17,6 +17,7 @@ body{
 }
 .left img{
     width: 366px;
+    height: 360px;
     margin-inline:32px ;
     grid-template-columns: repeat(auto-fit, minmax(350px, 400px));
 }

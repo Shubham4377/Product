@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-between; /* Adjust to space-between to remove extra space */
+    flex-wrap: wrap;
+    margin: 20px;
+    padding: 0; /* Remove padding */
+}
+
+.product-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 16px;
+    margin: 10px 0; /* Remove left and right margins */
+    text-align: center;
+    width: calc(22% - 20px); /* Adjust width to fit four items per row */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+    max-width: 50%; /* Reduce image size */
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 16px;
+}
+
+.product-item h3 {
+    font-size: 1em;
+    margin: 16px 0;
+}
+
+.product-item p {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-to-cart {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.8em;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.add-to-cart i {
+    margin-right: 5px;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries */
+@media (max-width: 850px) {
+    .product-item {
+        width: calc(45% - 20px); /* Adjust width for 2 items per row */
+    }
+    
+    .product-item img {
+        max-width: 70%; /* Adjust image size */
+    }
+}
+
+@media (max-width: 750px) {
+    .product-item {
+        width: calc(90% - 20px); /* Adjust width for 1 item per row */
+    }
+    
+    .product-item img {
+        max-width: 80%; /* Adjust image size */
+    }
+}
+
+/*--------------------------------------------------------------------- back button ---------------------------------------------------  */
+
+
+#back {
+    background-color: #5254f8;
+    color: white; 
+    border-radius: 50px;
+    margin: 10px;
+    padding: 10px 10px; /* Increase padding */
+    font-size: 18px; /* Increase font size */
+    text-align: center; /* Center align the text */
+}
+
+/*--------------------------------------------------------------------- filter options ---------------------------------------------------  */
+
+.filters {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.filters select {
+    padding: 10px;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+.filters span {
+    font-size: 16px;
+    color: #333;
+}

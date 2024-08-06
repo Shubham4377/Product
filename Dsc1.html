@@ -9,6 +9,80 @@
     <script src="https://kit.fontawesome.com/f30fac2c61.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto+Condensed:wght@700&family=Roboto+Slab&family=Roboto:wght@300&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
     <script src="Dsc1.js" defer></script>
+    <style>
+         
+body.dark-mode {
+    background-color: #fffbfbc1;
+    color: #ffffff;
+}
+body.dark-mode p {
+    color: black;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.toggle-switch {
+    display: flex;
+    align-items: center;
+}
+.toggle-switch input[type="checkbox"] {
+    display: none;
+}
+.toggle-switch label {
+    background-color: #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 50px;
+}
+.toggle-switch label::after {
+    background-color: #fff;
+    border-radius: 50%;
+    content: "";
+    height: 20px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    width: 20px;
+    transition: transform 0.3s ease;
+}
+.toggle-switch input[type="checkbox"]:checked + label::after {
+    transform: translateX(26px);
+}
+.toggle-switch input[type="checkbox"]:checked + label {
+    background-color: #4cd137;
+}
+.dark-mode .feature .content {
+    background-color: black;
+    color: white;
+}
+body.dark-mode .cart-items {
+background-color: white; /* Set the desired background color */
+color: black; /* Set the text color to ensure visibility */
+}
+
+body.dark-mode .cart-items input[type="text"],
+body.dark-mode .cart-items input[type="number"] {
+color: black; /* Input text color */
+}
+body.dark-mode .cart-items #address,
+body.dark-mode .cart-items #note {
+color: black;
+}
+body.dark-mode .cart-items .decrease-quantity,
+body.dark-mode .cart-items .increase-quantity,
+body.dark-mode .cart-items .remove-item {
+color: black; /* Quantity buttons and remove button color */
+}
+body.dark-mode .container .right i {
+background-color: transparent; /* Removes the background color */
+}
+    </style>
 </head>
 <body>
     <header>
@@ -26,11 +100,20 @@
                     <span></span>
                 </label>
             </div>
-            <div class="search-container">
+            <!-- <div class="search-container">
                 <form id="search-form" action="search_results.html" method="get">
                     <input type="text" placeholder="Search...">
                     <button type="submit">Search</button>
                 </form>
+            </div> -->
+            <div class="search-container">
+                <form id="search-form">
+                    <div class="search-input-container">
+                        <input type="text" id="search-input" placeholder="Search for products...">
+                        <button type="submit" class="search-button">Search</button>
+                    </div>
+                </form>
+                <div id="search-results" class="search-results"></div>
             </div>
             <div class="nav-links">
                 <a href="./venues.html">Venues</a>
@@ -40,7 +123,7 @@
             </div>
         </div>
         <div class="cart-icon" id="cart-icon">
-            🛒<span id="cart-count">0</span>
+            <i class="fas fa-shopping-bag"></i> <span id="cart-count">0</span>
         </div>
         <div class="cart-items" id="cart-items">
             <h2>Cart</h2>
@@ -65,6 +148,10 @@
         </div>
         <div class="account">
             <a href="/account" class="account-link">Account</a>
+        </div>
+        <div class="toggle-switch">
+            <input type="checkbox" id="mode-toggle">
+            <label for="mode-toggle"></label>
         </div>
     </header>
     <main>
@@ -146,7 +233,7 @@
                     <li><i class="fa fa-star checked"></i></li>
                     <li><i class="fa fa-star"></i></li>
                 </ul>
-                <button class="buy-1">Buy Now</button>
+                <button class="buy-1"><i class="fas fa-shopping-bag"></i>  Buy Now</button>
             </div>
             <div class="content">
                 <a href="product4.html">
@@ -161,7 +248,7 @@
                     <li><i class="fa fa-star"></i></li>
                     <li><i class="fa fa-star"></i></li>
                 </ul>
-                <button class="buy-2">Buy Now</button>
+                <button class="buy-2"><i class="fas fa-shopping-bag"></i>  Buy Now</button>
             </div>
             <div class="content">
                 <a href="product4.html">
@@ -176,7 +263,7 @@
                     <li><i class="fa fa-star checked"></i></li>
                     <li><i class="fa fa-star"></i></li>
                 </ul>
-                <button class="buy-3">Buy Now</button>
+                <button class="buy-3"><i class="fas fa-shopping-bag"></i>  Buy Now</button>
             </div>
             <div class="content">
                 <a href="product4.html">
@@ -191,7 +278,7 @@
                     <li><i class="fa fa-star checked"></i></li>
                     <li><i class="fa fa-star"></i></li>
                 </ul>
-                <button class="buy-4">Buy Now</button>
+                <button class="buy-4"><i class="fas fa-shopping-bag"></i>  Buy Now</button>
             </div>
         </div>
     </div>
@@ -231,5 +318,157 @@
             </div>
         </div>
     </footer>
+    <script>
+
+     
+        document.addEventListener('DOMContentLoaded', function () {
+        const modeToggle = document.getElementById('mode-toggle');
+        const body = document.body;
+        const featureContents = document.querySelectorAll('.feature .content');
+    
+        modeToggle.addEventListener('change', function () {
+            body.classList.toggle('dark-mode');
+    
+            const paragraphs = document.querySelectorAll('.feature .content p');
+            const headings = document.querySelectorAll('.feature .content h6');
+    
+            paragraphs.forEach(function (paragraph) {
+                if (modeToggle.checked) {
+                    paragraph.style.color = 'white';
+                } else {
+                    paragraph.style.color = ''; // revert to default
+                }
+            });
+    
+            headings.forEach(function (heading) {
+                if (modeToggle.checked) {
+                    heading.style.color = 'white';
+                } else {
+                    heading.style.color = ''; // revert to default
+                }
+            });
+    
+            featureContents.forEach(function (content) {
+                if (modeToggle.checked) {
+                    content.classList.add('dark-mode');
+                } else {
+                    content.classList.remove('dark-mode');
+                }
+            });
+        });
+    });
+    
+    // search button product 
+    
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     const searchForm = document.getElementById('search-form');
+    //     const searchInput = document.getElementById('search-input');
+    //     const searchResults = document.getElementById('search-results');
+    
+    //     // Example data (replace with actual product data)
+    //     const products = [
+    //         { id: 1, name: "Headly Light Cricket Tennis Ball", price: "520.00", image: "image/balls.png" },
+    //         { id: 2, name: "Slazenger Wimbledon Multicolour Tennis Ball", price: "525.00", image: "image/AnyConv.com__8615037-removebg-preview.png" },
+    //         { id: 3, name: "TENNEX Cricket Tennis Ball Yellow Heavy", price: "540.00", image: "image/cricket_tenis_ball-removebg-preview.png" },
+    //         { id: 4, name: "DSC Krunch 2.0 English Willow Cricket Bat", price: "20,960", image: "image/krunch-5-0-english-willow-cricket-bat-1_1fea8fe4-da2a-4e87-89b0-e8e02d080c69_713x-removebg-preview.png"}
+    //         // Add more products as needed
+    //     ];
+    
+    //     searchForm.addEventListener('submit', function(event) {
+    //         event.preventDefault(); // Prevent form submission
+    //         const searchTerm = searchInput.value.toLowerCase().trim();
+    
+    //         // Filter products based on search term
+    //         const filteredProducts = products.filter(product =>
+    //             product.name.toLowerCase().includes(searchTerm)
+    //         );
+    
+    //         // Display search results
+    //         if (filteredProducts.length > 0) {
+    //             const resultsHTML = filteredProducts.map(product => `
+    //                 <div class="search-result">
+    //                     <img src="${product.image}" alt="${product.name}">
+    //                     <p>${product.name}</p>
+    //                     <h6>Rs. ${product.price}</h6>
+    //                 </div>
+    //             `).join('');
+    //             searchResults.innerHTML = resultsHTML;
+    //             searchResults.classList.add('visible'); // Show search results container
+    //         } else {
+    //             searchResults.innerHTML = '<p>No results found.</p>';
+    //             searchResults.classList.remove('visible'); // Hide search results container if no results
+    //         }
+    //     });
+    
+    //     // Optional: Close search results when clicking outside
+    //     document.addEventListener('click', function(event) {
+    //         const isClickInside = searchForm.contains(event.target);
+    //         if (!isClickInside) {
+    //             searchResults.classList.remove('visible');
+    //         }
+    //     });
+    // });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchForm = document.getElementById('search-form');
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+    
+        // Example data (replace with actual product data)
+        const products = [
+            { id: 1, name: "Headly Light Cricket Tennis Ball", price: "520.00", image: "image/balls.png", url: "index.html" },
+            { id: 2, name: "Slazenger Wimbledon Multicolour Tennis Ball", price: "525.00", image: "image/AnyConv.com__8615037-removebg-preview.png", url: "./slazenger.html" },
+            { id: 3, name: "TENNEX Cricket Tennis Ball Yellow Heavy", price: "540.00", image: "image/cricket_tenis_ball-removebg-preview.png", url: "./Tennex1.html" },
+            { id: 4, name: "DSC Krunch 2.0 English Willow Cricket Bat", price: "20,960", image: "image/krunch-5-0-english-willow-cricket-bat-1_1fea8fe4-da2a-4e87-89b0-e8e02d080c69_713x-removebg-preview.png", url: "./Dsc.html" },
+            { id: 5, name: "Cosco Rubber Tennis Ball (Multicolour) Standard Size", price: "375.00", image: "image/71_lOJcSzUL._SX569__1_-removebg-preview.png", url: "./cosco.html" },
+            { id: 6, name: "Nivia Heavy Tennis Ball Cricket Ball (Pack of 12)", price: "1,056.00", image: "image/AnyConv.com__8623802-removebg-preview.png", url: "./Nivia.html" },
+            { id: 7, name: "Dunlop Fort All Court Tennis Ball (Green) 1 Can | 3 Balls", price: "825.00", image: "image/AnyConv.com__8607415-removebg-preview.png", url: "./Dunloop.html" },
+            { id: 8, name: "GRASSHOPPER Clubman Cricket Leather Ball", price: "810.00", image: "image/6286823-removebg-preview.png", url: "./grasshopper.html" },
+            { id: 9, name: "Sg Club Leather White Cricket Ball", price: "949.00", image: "image/5734016-removebg-preview.png", url: "product1.html" },
+            { id: 10, name: "Grasshopper True League Cricket  Ball", price: "595.00", image: "image/5733992-removebg-preview.png", url: "product2.html" },
+            { id: 11, name: "Competent Leather Cricket Ball White", price: "215.00", image: "image/6106534-removebg-preview.png", url: "product3.html" },
+            { id: 12, name: "Sg Club Leather Cricket Season Ball", price: "799.00", image: "image/5734010-removebg-preview.png", url: "product4.html" },
+            { id: 13, name: "Dsc Condor Winger English Willow Cricket Bat", price: "2,699.00", image: "image/DSC-Condor-Winger-English-Willow-Cricket-Bat-2-600x600_600x-removebg-preview.png", url: "product5.html" },
+            // Add more products as needed
+        ];
+    
+        searchForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            const searchTerm = searchInput.value.toLowerCase().trim();
+    
+            // Filter products based on search term
+            const filteredProducts = products.filter(product =>
+                product.name.toLowerCase().includes(searchTerm)
+            );
+    
+            // Display search results
+            if (filteredProducts.length > 0) {
+                const resultsHTML = filteredProducts.map(product => `
+                    <a href="${product.url}" class="search-result">
+                        <img src="${product.image}" alt="${product.name}">
+                        <p>${product.name}</p>
+                        <h6>Rs. ${product.price}</h6>
+                    </a>
+                `).join('');
+                searchResults.innerHTML = resultsHTML;
+                searchResults.classList.add('visible'); // Show search results container
+            } else {
+                searchResults.innerHTML = '<p>No results found.</p>';
+                searchResults.classList.remove('visible'); // Hide search results container if no results
+            }
+        });
+    
+        // Optional: Close search results when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInside = searchForm.contains(event.target);
+            if (!isClickInside) {
+                searchResults.classList.remove('visible');
+            }
+        });
+    });
+    
+    
+    
+        </script>
 </body>
 </html>
