@@ -159,11 +159,24 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // <----------------------------------------------- Buy now button alert--------------------------------------->
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
+//     const buyNowButton = document.getElementById('buy-now');
+
+//     buyNowButton.addEventListener('click', () => {
+//         alert('Thank you for your purchase!');
+//     });
+// });
+document.addEventListener('DOMContentLoaded', function() {
     const buyNowButton = document.getElementById('buy-now');
 
-    buyNowButton.addEventListener('click', () => {
-        alert('Thank you for your purchase!');
+    buyNowButton.addEventListener('click', function() {
+        const title = encodeURIComponent(buyNowButton.getAttribute('data-title'));
+        const price = encodeURIComponent(buyNowButton.getAttribute('data-price'));
+        const image = encodeURIComponent(buyNowButton.getAttribute('data-image'));
+        const quantity = encodeURIComponent(buyNowButton.getAttribute('data-quantity'));
+        const total = encodeURIComponent(buyNowButton.getAttribute('data-total'));
+
+        window.location.href = `checkout.html?title=${title}&price=${price}&image=${image}&quantity=${quantity}&total=${total}`;
     });
 });
 
@@ -175,6 +188,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // <----------------------------------------------- Proceed to Buy Button Redirect --------------------------------------->
+
 document.getElementById('proceed-to-buy-button').addEventListener('click', function() {
     var cart = JSON.parse(localStorage.getItem('cart')) || [];
     if (cart.length > 0) {
@@ -413,3 +427,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+// feature product //

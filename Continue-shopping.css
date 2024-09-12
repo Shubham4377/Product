@@ -1,16 +1,345 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
+/* ---------------------------------------------------------------navbar------------------------------- */
+
+.nav {
+    height: 50px;
+    width: 100%;
+    /* background-color: rgb(18, 18, 18); */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* border: 2px solid rgb(15, 15, 15); */
+    align-items: center;
+}
+.nav-title a {
+    text-decoration: none;
+    color: #fff;
+}
+.nav-title img{
+    width: 100px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.nav>.nav-header {
+display: inline;
 }
 
+.nav>.nav-header>.nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px 10px 10px 10px;
+}
+
+.nav>.nav-btn {
+    display: none;
+}
+
+.nav>.nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+}
+
+.nav>.nav-links>a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
+}
+.nav>.nav-links>a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid rgb(82, 84, 248);
+}
+
+.nav>#nav-check {
+    display: none;
+}
+
+.nav>.nav-links button {
+    padding: 20px 20px;
+    background-color: rgb(82, 84, 248);
+    color: #fff;
+    border-radius: 20px;
+    border-color: #fff;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+.search-container input[type="text"] {
+    
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    width: 150px;
+    background-color: #fff;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: rgb(82, 84, 248);
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+    cursor: pointer;
+    width: 150px;
+   
+}
+
+.account-link {
+    padding: 15px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+/* Ensure the parent container of .account-link uses flexbox */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+/* If needed, ensure the account container is a flex item and centered */
+.account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Make it take up available space */
+}
+
+
+/* Media query for screens smaller than 1156px */
+@media (max-width: 1156px) {
+    .nav {
+        height: 40px;
+    }
+    .nav-title img {
+        width: 80px;
+        height: 30px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 18px;
+        padding: 8px;
+    }
+    .nav > .nav-links {
+        font-size: 16px;
+    }
+    .nav > .nav-links > a {
+        padding: 10px 8px;
+    }
+    .nav > .nav-links button {
+        padding: 15px;
+    }
+    .search-container input[type="text"] {
+        padding: 8px;
+        font-size: 14px;
+        width: 120px;
+    }
+    .search-container button {
+        padding: 8px 15px;
+        font-size: 14px;
+        width: 120px;
+    }
+}
+
+/* Media query for screens smaller than 1017px */
+@media (max-width: 1017px) {
+    .nav {
+        height: 35px;
+    }
+    .nav-title img {
+        width: 70px;
+        height: 25px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 16px;
+        padding: 6px;
+    }
+    .nav > .nav-links {
+        font-size: 14px;
+    }
+    .nav > .nav-links > a {
+        padding: 8px 6px;
+    }
+    .nav > .nav-links button {
+        padding: 12px;
+    }
+    .search-container input[type="text"] {
+        padding: 6px;
+        font-size: 12px;
+        width: 100px;
+    }
+    .search-container button {
+        padding: 6px 12px;
+        font-size: 12px;
+        width: 100px;
+    }
+}
+
+/* Media query for screens smaller than 992px */
+@media (max-width: 992px) {
+    .nav {
+        height: 30px;
+    }
+    .nav-title img {
+        width: 60px;
+        height: 20px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 14px;
+        padding: 4px;
+    }
+    .nav > .nav-links {
+        font-size: 12px;
+    }
+    .nav > .nav-links > a {
+        padding: 6px 4px;
+    }
+    .nav > .nav-links button {
+        padding: 10px;
+    }
+    .search-container input[type="text"] {
+        padding: 4px;
+        font-size: 10px;
+        width: 80px;
+    }
+    .search-container button {
+        padding: 4px 10px;
+        font-size: 10px;
+        width: 80px;
+    }
+}
+
+/* Media query for screens smaller than 913px */
+@media (max-width: 913px) {
+    .nav {
+        height: 25px;
+    }
+    .nav-title img {
+        width: 55px;
+        height: 18px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 13px;
+        padding: 3px;
+    }
+    .nav > .nav-links {
+        font-size: 11px;
+    }
+    .nav > .nav-links > a {
+        padding: 5px 3px;
+    }
+    .nav > .nav-links button {
+        padding: 9px;
+    }
+    .search-container input[type="text"] {
+        padding: 3px;
+        font-size: 9px;
+        width: 70px;
+    }
+    .search-container button {
+        padding: 3px 9px;
+        font-size: 9px;
+        width: 70px;
+    }
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    .nav {
+        height: 20px;
+    }
+    .nav-title img {
+        width: 50px;
+        height: 15px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 12px;
+        padding: 2px;
+    }
+    .nav > .nav-links {
+        font-size: 10px;
+    }
+    .nav > .nav-links > a {
+        padding: 4px 2px;
+    }
+    .nav > .nav-links button {
+        padding: 8px;
+    }
+    .search-container input[type="text"] {
+        padding: 2px;
+        font-size: 8px;
+        width: 60px;
+    }
+    .search-container button {
+        padding: 2px 8px;
+        font-size: 8px;
+        width: 60px;
+    }
+}
+
+/* Media query for screens smaller than 576px */
+@media (max-width: 576px) {
+    .nav {
+        height: 15px;
+    }
+    .nav-title img {
+        width: 45px;
+        height: 10px;
+    }
+    .nav > .nav-header > .nav-title {
+        font-size: 10px;
+        padding: 1px;
+    }
+    .nav > .nav-links {
+        font-size: 8px;
+    }
+    .nav > .nav-links > a {
+        padding: 3px 1px;
+    }
+    .nav > .nav-links button {
+        padding: 6px;
+    }
+    .search-container input[type="text"] {
+        padding: 1px;
+        font-size: 6px;
+        width: 50px;
+    }
+    .search-container button {
+        padding: 1px 6px;
+        font-size: 6px;
+        width: 50px;
+    }
+}
+/* ---------------------------------------------------------------navbar end ------------------------------- */
+/* body {
+    
+    background-color: #f5f5f5;
+    
+} */
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: black;
+    background-color: black;
+}
 .product-list {
     display: flex;
     justify-content: space-between; /* Adjust to space-between to remove extra space */
     flex-wrap: wrap;
     margin: 20px;
-    padding: 0; /* Remove padding */
+    padding: 25px; /* Remove padding */
 }
 
 .product-item {
@@ -120,5 +449,733 @@ body {
 
 .filters span {
     font-size: 16px;
+    color: #fff;
+}
+
+
+
+/* <--------------------------------------------------------------- header ka cart section  -----------------------------------------------------> */
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: black;
+}
+
+.cart-icon {
+    /* height: 10px; */
+    /* width: 10px; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+    
+}
+
+#cart-count {
+    /* height: 10px;
+    width: 10px; */
+    background-color: red;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.cart-items {
+    height: 200px;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px;
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart-items.open {
+    display: block;
+}
+
+.cart-items ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cart-items ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    align-items: center;
+}
+
+
+
+.cart-items ul li button {
+    /* background-color: red; */
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+/* .myaccount{
+    color: #fff;
+    text-size-adjust: 2px;
+    display: flex;
+} */
+
+/* .cart-items {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    width: 290px;
+    padding: 160px;
+    color: #ccc;
+    background-color: white;
+} */
+.cart-items.open {
+    display: block;
+}
+.cart-item-controls button {
+    margin: 0 5px;
+}
+#cart-icon {
+    cursor: pointer;
+}
+.cart-item-image {
+    width: 100px; 
+    object-fit: cover;
+}
+
+.product {
+    text-align: center;
+    margin: 50px;
+    color: #5254f8;
+}
+.product h2{
+    color: #3498db;
+}
+.product h3{
+    color: orange;
+}
+/* .product img {
+    width: 200px;
+    height: auto;
+} */
+.product .left{
+    display: flex;
+    flex-direction: row;
+}
+
+.product image{
+    border: 2px solid black;
+    border-radius: 8px;
+    width: 300px;
+    height: auto; /* Maintains aspect ratio */
+}
+.product i{
+    /* margin-top: 20px; */
+    color: orange;
+    background-color: black;
+}
+.quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row; /* Place items in a row */
+    justify-content: flex-start;
+    color: #fff;
+}
+
+.quantity button {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.quantity input {
+    width: 50px;
+    text-align: center;
+    background-color: #fff;
+}
+.cart-buttons {
+    display: flex;
+    gap: 10px; /* Adjust the gap as needed */
+}
+
+.cart-buttons button {
+    flex: 1; /* Makes sure both buttons have equal width */
+}
+.button-container {
+    display: flex;
+    flex-direction: row; /* Place items in a row */
+    justify-content: flex-start; /* Align items to the start */
+}
+
+button#add-to-cart, button#buy-now {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #5254f8;
+}
+/* Ensure the buttons are always visible */
+#checkoutButton, #proceedToBuyButton {
+    display: block !important; /* Use !important to override any other styles */
+    visibility: visible !important;
+}
+
+#back {
+    background-color: #5254f8;
+    color: white; 
+    border-radius: 50px;
+    padding: 10px;
+}
+
+
+/* styles.css */
+
+/* Remove the white background inside the cart */
+.cart-items {
+    background-color: rgb(25, 26, 28);; /* Or use any color you prefer */
+}
+.cart-items h2,
+.cart-items h3,
+.cart-items label,
+.cart-items input,
+.cart-items textarea,
+.cart-items button {
+    background-color: transparent; /* Ensures all elements within the cart have a transparent background */
+}
+/* Optional: Adding some styles to make the cart look nicer */
+.cart-items {
+    border: 1px solid #ccc; /* Optional: Add a border to the cart */
+    padding: 160px; /* Optional: Add some padding */
+    margin: 20px;
+}
+
+/* <---------------------------------------------------------------  end -----------------------------------------------------> */
+/* <-----------------------------------------------------------------toogle start---------------------------------------------->*/
+       
+body.dark-mode {
+    background-color: #fffbfbc1;
+    color: black;
+}
+body.dark-mode p {
+    color: black;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.toggle-switch {
+    display: flex;
+    align-items: center;
+}
+.toggle-switch input[type="checkbox"] {
+    display: none;
+}
+.toggle-switch label {
+    background-color: #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 50px;
+}
+.toggle-switch label::after {
+    background-color: #fff;
+    border-radius: 50%;
+    content: "";
+    height: 20px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    width: 20px;
+    transition: transform 0.3s ease;
+}
+.toggle-switch input[type="checkbox"]:checked + label::after {
+    transform: translateX(26px);
+}
+.toggle-switch input[type="checkbox"]:checked + label {
+    background-color: #4cd137;
+}
+.dark-mode .feature .content {
+    background-color: black;
+    color: white;
+}
+body.dark-mode .cart-items {
+background-color: white; /* Set the desired background color */
+color: black; /* Set the text color to ensure visibility */
+}
+
+body.dark-mode .cart-items input[type="text"],
+body.dark-mode .cart-items input[type="number"] {
+color: black; /* Input text color */
+}
+body.dark-mode .cart-items #address,
+body.dark-mode .cart-items #note {
+color: black;
+}
+body.dark-mode .cart-items .decrease-quantity,
+body.dark-mode .cart-items .increase-quantity,
+body.dark-mode .cart-items .remove-item {
+color: black; /* Quantity buttons and remove button color */
+}
+body.dark-mode .container .right i {
+background-color: transparent; /* Removes the background color */
+}
+/* <-----------------------------------------------------------------toogle end---------------------------------------------->*/
+
+
+
+/* -------------------------------------------search-button css code-------------------------- */
+
+.search-container {
+    position: relative;
+    margin-bottom: 1px;
+}
+
+.search-results {
+    position: absolute;
+    top: calc(100% + 10px); /* Position below the search bar with a small gap */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it's on top of other content */
+    display: none; /* Initially hidden */
+    border-top: 2px solid #4cd137; /* Optional: Add a top border for separation */
+}
+
+.search-results.visible {
+    display: block; /* Show when results are available */
+}
+
+.search-result {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.search-result img {
+    width: 50px; /* Adjust image size as needed */
+    height: 50px; /* Adjust image size as needed */
+    margin-right: 10px;
+}
+
+.search-result p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: black; /* Set text color to black */
+}
+
+.search-result h6 {
+    margin: 0;
+    color: #777;
+    font-size: 12px;
+}
+/* -------------------------------------------search-button css code end -------------------------- */
+
+/* -------------------------------------------------------------------- FOOTER---------------------------------------------- */
+
+.main_last {
+    width: 100%;
+    min-height: 40vh;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(25, 26, 28);
+}
+
+.container_last {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+
+.first img {
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* .second_last {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+} */
+.second_last {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.second_last .second,
+.second_last .third {
+    margin: 0 10px;
+}
+.second img {
+    /* height: 80px; */
+    /* margin-top: 33px; */
+    width: 150px; /* Adjust the width as needed */
+    height: auto;
+}
+
+.third img {
+    /* height: 150px;
+    margin-bottom: 15px; */
+    width: 150px; /* Adjust the width as needed */
+    height: auto;
+}
+
+.heading_last {
+    font-size: 15px;
+    color: white;
+    margin-top: 15px;
+}
+
+.footer_one {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
+
+
+.company_one li {
+    list-style: none;
+    padding-bottom: 20px;
+    font-size: 20px;
+    color: darkgrey;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.social_one li {
+    list-style: none;
+    padding-bottom: 20px;
+    font-size: 20px;
+    color: darkgrey;
+    display: flex;
+    justify-content: space-between;
+}
+
+.color_white {
+    color: white;
+}
+
+@media screen and (max-width:850px) {
+    .main_last {
+        width: 100%;
+        background-color: rgb(25, 26, 28);
+    }
+    .container_last {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .main_last{
+        /* padding: 10px; */
+    }
+    .image_last {
+        width: 100%;
+    }
+
+    .heading_last {
+        margin-bottom: 50px;
+    }
+    .footer_one {
+       
+        width: 100%;
+    }
+    .container_last {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+/* Add this CSS to your existing stylesheet */
+
+.cart-items {
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 300px;
+}
+
+.cart-items.show {
+    display: block;
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.cart-icon {
+    cursor: pointer;
+}
+
+
+/* Add these styles to your styles.css file */
+
+/* Cart items container */
+.cart-items {
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.cart-items.show {
+    display: block;
+}
+
+/* Cart item */
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+/* Cart buttons */
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.cart-icon {
+    cursor: pointer;
+}
+
+
+/* Add these styles to your styles.css file */
+#checkout-button, #proceed-to-buy-button {
+    background-color: #5254f8; /* Background color */
+    color: white; 
+    
+    border: none; /* Remove borders */
+    padding: 5px 10px; /* Adjust padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Inline block */
+    font-size: 14px; /* Adjust font size */
+    margin: 2px 2px; /* Add some margin */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+
+#checkout-button:hover, #proceed-to-buy-button:hover {
+    background-color: #2872c8c1; /* Darker green on hover */
+}
+
+.cart-buttons {
+    display: flex; /* Use flexbox to align buttons */
+    justify-content: space-between; /* Space between the buttons */
+    margin-top: 20px; /* Add some margin at the top */
+    /* background-color: #fff; */
+}
+/* --------------------------------------remove button in cart----------------------------------- */
+
+/* Style for the remove button */
+/* Style for the remove button */
+.remove-from-cart {
+    background-color: #2d3ac8; /* Updated background color */
+    color: white; /* Changed text color for better contrast */
+    border: 1px solid #270fc1; /* Border color to match background */
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 5px; /* Rounded corners */
+    margin-left: 10px; /* Space between product info and button */
+    display: inline-block; /* Ensures button respects padding and margins */
+    text-align: center; /* Centers text inside the button */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the button */
+.remove-from-cart:hover {
+    background-color: #1e2a80; /* Darker shade of the background color */
+    border-color: #1e2a80; /* Border color to match background on hover */
+}
+
+/*--------------------------------------------------------*/
+.cart-address,
+.cart-note {
+    margin-bottom: 15px; /* Adjust the value to control the spacing between the fields */
+    color: black;
+}
+
+.cart-address label,
+.cart-note label {
+    display: block;
+    margin-bottom: 5px; /* Space between label and input field */
+}
+
+.cart-address input,
+.cart-note textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/*------------------------------------------------------- carty*/
+
+/* Basic styling for cart items container */
+.cart-items {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.cart-items h2 {
+    text-align: center;
     color: #333;
+    margin-bottom: 20px;
+}
+
+/* Cart list styling */
+#cart-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cart-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#cart-list li img {
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+#cart-list li .item-details {
+    flex: 1;
+}
+
+#cart-list li .item-details h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+#cart-list li .item-details p {
+    margin: 0;
+    color: #777;
+}
+
+#cart-list li .item-price {
+    font-weight: bold;
+}
+
+/* Cart total styling */
+.cart-total {
+    margin: 20px 0;
+    text-align: right;
+    font-size: 18px;
+    color: #333;
+}
+
+.cart-total h3 {
+    margin: 0;
+}
+
+/* Address and note styling */
+.cart-address,
+.cart-note {
+    margin: 10px 0;
+    color: black;
+}
+
+
+.cart-address label,
+.cart-note label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.cart-address input,
+.cart-note input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Button styling */
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cart-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }

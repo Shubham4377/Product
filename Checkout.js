@@ -49,3 +49,4 @@ function updateCartURLParams() {
 document.getElementById('proceed-to-buy-button').addEventListener('click', updateCartURLParams);
 
 
+// product buy-now se
